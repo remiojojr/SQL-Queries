@@ -2,7 +2,7 @@ Assume you are given the table below containing information on user transactions
 
 Output the year (in ascending order) partitioned by product id, current year's spend, previous year's spend and year-on-year growth rate (percentage rounded to 2 decimal places).
 
-user_transactions Table:
+```user_transactions``` Table:
 
 | Columne Name  | Type          |
 | ------------- | ------------- |
@@ -12,7 +12,7 @@ user_transactions Table:
 | transaction_date   | datetime        |
 
 
-Example Input:
+```user_transactions``` Example Input:
 | transaction_id | 	product_id |	spend        |	transaction_date |
 | ------------- | ------------- | ------------- | ------------- |
 |     1341   	|     7765	| 1500.60	| 05/31/2022 12:00:00
