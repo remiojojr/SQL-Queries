@@ -11,7 +11,7 @@ Hint: An active user is a user who has user action ("sign-in", "like", or "comme
 | event_type  | string          |
 | event_date  | datetime        |
 
-```user_sactions``` Example Input:
+```user_actions``` Example Input:
 
 | user_id | 	event_id |	event_type |	event_date |
 | ------------- | ------------- | ------------- | ------------- |
