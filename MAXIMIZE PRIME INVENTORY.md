@@ -3,7 +3,7 @@ Amazon wants to maximize the number of items it can stock in a 500,000 square fe
 Write a SQL query to find the number of prime and non-prime items that can be stored in the 500,000 square feet warehouse. Output the item type and number of items to be stocked.
 
 
-inventory Table:
+```inventory``` Table:
 
 | Columne Name       |      Type       |
 | -------------      | -------------   | 
@@ -12,7 +12,7 @@ inventory Table:
 | item_category         | string          |
 | square_footage        | decimal       |
 
-Example Input:
+```inventory``` Example Input:
 
 | item_id | 	item_type |	item_category |	square_footage |
 | ------------- | ------------- | ------------- | ------------- |
