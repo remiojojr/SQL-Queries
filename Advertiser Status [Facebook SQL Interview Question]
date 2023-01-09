@@ -1,0 +1,32 @@
+WITH BASE AS
+(SELECT
+    a.user_id
+  , a.status
+  , b.paid
+FROM advertiser a
+LEFT JOIN daily_pay b
+ON a.user_id = b.user_id
+
+UNION
+
+SELECT
+    a.user_id
+  , b.status
+  , a.paid
+FROM daily_pay a
+LEFT JOIN advertiser b
+ON a.user_id = b.user_id
+)
+
+SELECT
+  user_id
+,CASE WHEN paid IS NULL THEN 'CHURN'
+     WHEN status != 'CHURN' AND paid IS NOT NULL THEN 'EXISTING'
+     WHEN status = 'CHURN' AND paid IS NOT NULL THEN 'RESURRECT'
+     WHEN status IS NULL THEN 'NEW'
+
+END AS status
+
+FROM BASE
+ORDER BY user_id
+;
