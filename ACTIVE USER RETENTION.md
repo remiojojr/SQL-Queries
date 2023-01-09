@@ -2,7 +2,7 @@ Assume you have the table below containing information on Facebook user actions.
 
 Hint: An active user is a user who has user action ("sign-in", "like", or "comment") in the current month and last month
 
-user_actions Table:
+```user_actions``` Table:
 
 | Columne Name  | Type          |
 | ------------- | ------------- |
@@ -11,7 +11,8 @@ user_actions Table:
 | event_type  | string          |
 | event_date  | datetime        |
 
-Example Input:
+```user_sactions``` Example Input:
+
 | user_id | 	event_id |	event_type |	event_date |
 | ------------- | ------------- | ------------- | ------------- |
 |445 	| 7765	| sign-in	| 05/31/2022 12:00:00
