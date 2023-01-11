@@ -1,0 +1,12 @@
+SELECT 
+a.topping_name || ',' ||b.topping_name || ',' || c.topping_name AS pizza
+, (a.ingredient_cost + b.ingredient_cost + c.ingredient_cost) AS total_cost
+
+
+FROM pizza_toppings a
+INNER JOIN pizza_toppings b
+ON a.topping_name < b.topping_name
+INNER JOIN pizza_toppings c
+ON b.topping_name < c.topping_name
+
+ORDER BY 2 DESC, 1
