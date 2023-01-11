@@ -6,10 +6,10 @@ Break ties by listing the ingredients in alphabetical order, starting from the f
 
 P.S. Be careful with the spacing (or lack of) between each ingredient. Refer to our Example Output.
 
-_Notes:_
+**Notes:**
 
-*Do not display pizzas where a topping is repeated. For example, ‘Pepperoni,Pepperoni,Onion Pizza’.
-*Ingredients must be listed in alphabetical order. For example, 'Chicken,Onions,Sausage'. 'Onion,Sausage,Chicken' is not acceptable.
++ Do not display pizzas where a topping is repeated. For example, ‘Pepperoni,Pepperoni,Onion Pizza’.
++ Ingredients must be listed in alphabetical order. For example, 'Chicken,Onions,Sausage'. 'Onion,Sausage,Chicken' is not acceptable.
 
 
 ```pizza_toppings``` Table:
