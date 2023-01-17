@@ -1,0 +1,25 @@
+WITH BASE AS (SELECT 
+  EXTRACT(year FROM call_received) AS yr
+, EXTRACT(month from call_received) AS mth  
+, SUM(CASE WHEN call_duration_secs >= 300 THEN 1 ELSE 0 END) AS num_long_calls
+FROM callers
+GROUP BY 1,2
+ORDER BY 1,2 ASC
+),
+
+SUMMARY AS(
+SELECT
+  yr
+, mth
+, LAG(num_long_calls) OVER () AS previous_mth
+, num_long_calls AS current_mth
+FROM BASE
+)
+
+SELECT
+  yr
+, mth
+, ROUND((current_mth - previous_mth)*1.0 / (previous_mth) * 100.0,1) AS growth_pct
+FROM SUMMARY
+ORDER BY 1,2
+;
