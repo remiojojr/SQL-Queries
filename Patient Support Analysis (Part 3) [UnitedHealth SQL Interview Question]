@@ -1,0 +1,20 @@
+WITH BASE AS (SELECT
+  policy_holder_id
+, call_received
+, LAG(call_received) OVER (PARTITION BY policy_holder_id ORDER BY call_received) AS previous_call
+FROM callers
+
+),
+
+SUMMARY AS (
+SELECT
+policy_holder_id
+, (EXTRACT(EPOCH FROM call_received) - EXTRACT(EPOCH FROM previous_call)) AS days_between
+FROM BASE
+)
+
+SELECT
+COUNT(DISTINCT policy_holder_id)
+FROM SUMMARY
+WHERE days_between IS NOT NULL
+ AND days_between/(24*60*60) <= 7
